@@ -10,7 +10,7 @@ private:
     char workingDay;
     char workingTime;
 public:
-    void Show();
+    void Show(char name);
     int SetName();
     int SetSpeciality();
     int SetAge();

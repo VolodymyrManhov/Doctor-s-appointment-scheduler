@@ -8,7 +8,7 @@
 
 int main()
 {
-
+    Show();
 
     return 0;
 };

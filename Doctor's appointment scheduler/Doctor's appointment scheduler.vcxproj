@@ -130,6 +130,7 @@
     <ClCompile Include="Doctor%27s appointment scheduler.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Patien.cpp" />
+    <ClCompile Include="Patient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Doctor.h" />
