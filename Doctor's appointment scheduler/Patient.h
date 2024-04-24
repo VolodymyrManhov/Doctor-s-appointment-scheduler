@@ -1,15 +1,14 @@
 #pragma once
 #include <iostream>
+#include <string>
 
-class Patien
+class Patient
 {
 private:
-    char name[20];
-    char disease[40];
-    int age;
+    std::string name;
+    std::string disease;
+    int age;  
 public:
-    void Show();
-    int SetDisease();
-    int SetAge();
-    int SetName();
+    double getAge() { return age; }
+
 };

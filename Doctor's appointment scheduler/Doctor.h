@@ -1,19 +1,18 @@
 #pragma once
 #include <iostream>
+#include <iostream>
 
 class Doctor
 {
 private:
-    char name[20];
-    char specialty[20];
+    std::string name;
+    std::string speciality;
     int age;
-    char workingDay;
-    char workingTime;
+    std::string workingDay;
+    std::string workingTime;
 public:
-    void Show(char name);
-    int SetName();
-    int SetSpeciality();
-    int SetAge();
-    int SetWorkingDay();
-    int SetWorkingTime();
+    double getAge() { return age; }  
+    Doctor();
+    
+    ~Doctor();
 };

@@ -18,13 +18,16 @@
     <ClCompile Include="Doctor%27s appointment scheduler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Patien.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Doctor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Patient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SuperUser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -33,6 +36,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Patient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Userr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperUser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
