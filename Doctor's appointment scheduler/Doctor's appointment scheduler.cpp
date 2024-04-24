@@ -11,16 +11,24 @@ using namespace std;
 
 void Show(Doctor& doctor);
 
+void showAge(Doctor doctor)
+{
+
+    std::cout << "Age is: " << doctor.getAge() << std::endl;
+
+}
+
 int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    
-    Doctor penis;
-    Doctor* sapoglot = new Doctor();
-    
-    
-    delete sapoglot;
+   
+    Doctor abubachir;
+    Doctor farsad("2", "aboba", 20);
+   
+    showAge(farsad);
+
+
     return 0;
 };
 
