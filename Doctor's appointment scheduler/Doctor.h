@@ -11,9 +11,13 @@ private:
     std::string workingDay;
     std::string workingTime;
 public:
+   
     double getAge() { return age; }  
- 
-
+    std::string getName() { return name; }
+    std::string getWorkingDay() { return workingDay; }
+    std::string getWorkingTime() { return workingTime; }
+    std::string getSpeciality() { return speciality; }
+    
     Doctor();   
     Doctor(std::string new_name);
     Doctor(std::string new_name, std::string new_speciality);

@@ -10,12 +10,13 @@ private:
     int age;  
 public:
     double getAge() { return age; }
-
-    void showAll(std::string new_name, std::string new_disease, int new_age);
+    std::string getName() { return name; }
+    std::string getDisease() { return disease; }
 
     Patient();
     Patient(std::string new_name);
-    Patient(std::string new_disease, int new_age);
-    Patient(std::string new_name, std::string new_disease, int new_age); 
+    Patient(std::string new_name, std::string new_disease);
+    Patient(std::string new_name, std::string new_disease, int new_age);
+    
     ~Patient();
 };
