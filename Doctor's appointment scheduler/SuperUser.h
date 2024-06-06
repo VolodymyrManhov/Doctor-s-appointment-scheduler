@@ -7,5 +7,7 @@ private:
     std::string login;
 public:
 
+    SuperUser();
 
+    ~SuperUser();
 };
