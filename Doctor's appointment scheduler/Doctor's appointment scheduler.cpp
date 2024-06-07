@@ -24,6 +24,8 @@ void menuClient();
 
 void clear();
 
+void registration();
+
 int main()
 {
     SetConsoleCP(1251);
@@ -33,59 +35,83 @@ int main()
     bool auth_status = false;
     
     while (auth_status == false) {
-        cout << "1) Я лікар" << endl;
-        cout << "2) Я потребую допомоги" << endl;
-        cout << "3) Я адміністратор" << endl;
+        cout << "1) Лікар" << endl;
+        cout << "2) Клієнт" << endl;
+        cout << "3) Адміністратор" << endl;
         cout << "4) Вийти" << endl;
 
         cin >> choice;
 
         if (choice == 1) {
 
-            cout << "Введіть свій пароль...";
+            cout << "Введіть свій пароль..." << endl;
             int password;
             int true_password = 228;
             cin >> password;
 
             if (true_password == password) {
-                cout << "Пароль підтвержденно.";
+                cout << "Пароль підтвержденно." << endl;
                 auth_status = true;
+                menuDoctor();
                 // функція меню лікаря
             }
-        }
-        else break;
+            else cout << "Пароль невірний..." << endl;
+
+        }     
 
         if (choice == 2) {
+            auth_status = true;
+            int age;
+            cout << "Cкільки вам років?" << endl;
+            cin >> age;
 
-            cout << "Введіть свій пароль...";
-            int password;
-            int true_password = 228;
-            cin >> password;
-
-            if (true_password == password) {
-                cout << "Пароль підтвержденно.";
-                auth_status = true;
-                // функція меню лікаря
+            if (age > 18) {
+               
+                cout << "Ви є повнолітньою особою." << endl;
+                menuClient();
             }
+            else if (age < 18) {
+                
+                if (age < 0) {
 
+                    cout << "Некоректний вік..." << endl;                   
+                    return 0;
+                
+                }
+                if (age < 1) {
+
+                    cout << "Підтримка непоінооітніх пацієнтів нема" << endl;
+
+                }
+
+
+                cout << "Ви є неповнолітньою особою " << endl;
+
+            
+            }                     
         }
+       
         if (choice == 3) {
 
-            cout << "Введіть свій пароль...";
+            cout << "Введіть свій пароль..." << endl;
             int password;
             int true_password = 228;
             cin >> password;
 
             if (true_password == password) {
-                cout << "Пароль підтвержденно.";
+                cout << "Пароль підтвержденно." << endl;
                 auth_status = true;
-                // функція меню лікаря
+                menuAdmin();
+                // функція адмін меню 
             }
-            if (choice == 4) {
+            else cout << "Пароль невірний..." << endl;
 
-                return 0;
+        }
+        
+        if (choice == 4) {
 
-            }
+            return 0;
+
         }
     }
    
@@ -125,9 +151,30 @@ void showAll(Doctor doctor, Patient patient)
     std::cout << "Name is: " << patient.getName() << std::endl;
     std::cout << "Disease is: " << patient.getDisease() << std::endl << std::endl;
 }
-void senuClient() {
+void menuClient() {
+   
+        cout << "1) Запис на прийом до лікаря" << endl;
+        cout << "2) Інформація про лікарню" << endl;
+        cout << "3) " << endl;
+        cout << "4) " << endl;
+   
+}
 
-    cout << "1";
+void menuDoctor() {
+
+        cout << "1) " << endl;
+        cout << "2) " << endl;
+        cout << "3) " << endl;
+        cout << "4) " << endl;
+
+}
+
+void menuAdmin() {
+
+        cout << "1) " << endl;
+        cout << "2) " << endl;
+        cout << "3) " << endl;
+        cout << "4) " << endl;
 
 }
 
@@ -147,3 +194,4 @@ void clear() {
     );
     SetConsoleCursorPosition(console, topLeft);
 }
+

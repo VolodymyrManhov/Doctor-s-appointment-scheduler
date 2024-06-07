@@ -6,6 +6,8 @@ private:
     int password;
     std::string login;
 public:
+    User() {}
 
+    ~User() {}
 
 };
