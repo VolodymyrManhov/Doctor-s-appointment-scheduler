@@ -1,11 +1,21 @@
 // Doctor's appointment scheduler.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+/*Список лікарів :
+1) Лор 
+2) Хірург
+3) Проктолог
+4) Дерматолог
+5) Психолог
+6) Педіатр*/
+
 
 #include <iostream>
 #include <cstring>
+#include <fstream>
 #include "Patient.h"
 #include "Doctor.h"
 #include <windows.h>
+#include <vector>
 
 using namespace std;
 
@@ -25,6 +35,9 @@ void menuClient();
 void clear();
 
 void registration();
+
+
+
 
 int main()
 {
@@ -53,7 +66,7 @@ int main()
                 cout << "Пароль підтвержденно." << endl;
                 auth_status = true;
                 menuDoctor();
-                // функція меню лікаря
+                // меню лікаря
             }
             else cout << "Пароль невірний..." << endl;
 
@@ -61,34 +74,17 @@ int main()
 
         if (choice == 2) {
             auth_status = true;
-            int age;
-            cout << "Cкільки вам років?" << endl;
-            cin >> age;
+            bool choice;
+            cout << "Бажаєте зареєструватися?(1 or 0)" << endl;
+            cin >> choice;
 
-            if (age > 18) {
-               
-                cout << "Ви є повнолітньою особою." << endl;
+            if (1) {
+\
                 menuClient();
+                // меню кліента
             }
-            else if (age < 18) {
-                
-                if (age < 0) {
-
-                    cout << "Некоректний вік..." << endl;                   
-                    return 0;
-                
-                }
-                if (age < 1) {
-
-                    cout << "Підтримка непоінооітніх пацієнтів нема" << endl;
-
-                }
-
-
-                cout << "Ви є неповнолітньою особою " << endl;
-
-            
-            }                     
+            else return 0;
+                    
         }
        
         if (choice == 3) {
@@ -118,65 +114,112 @@ int main()
     return 0;
 }
 
-void showDoctor(Doctor doctor)
-{
 
-    std::cout << "docs" << std::endl;
-    std::cout << "Age is: " << doctor.getAge() << std::endl;
-    std::cout << "Working day is: " << doctor.getWorkingDay() << std::endl;
-    std::cout << "Working time is: " << doctor.getWorkingTime() << std::endl;
-    std::cout << "Speciality is: " << doctor.getSpeciality() << std::endl;
-    std::cout << "Name is: " << doctor.getName() << std::endl << std::endl;
-}
-
-void showPatient(Patient patient)
-{
-
-    std::cout << "Age is: " << patient.getAge() << std::endl;
-    std::cout << "Name is: " << patient.getName() << std::endl;
-    std::cout << "Disease is: " << patient.getDisease() << std::endl;
-}
-
-void showAll(Doctor doctor, Patient patient)
-{
-    std::cout << "docs" << std::endl;
-    std::cout << "Age is: " << doctor.getAge() << std::endl;
-    std::cout << "Working day is: " << doctor.getWorkingDay() << std::endl;
-    std::cout << "Working time is: " << doctor.getWorkingTime() << std::endl;
-    std::cout << "Speciality is: " << doctor.getSpeciality() << std::endl;
-    std::cout << "Name is: " << doctor.getName() << std::endl << std::endl;
-
-    std::cout << "patients" << std::endl;
-    std::cout << "Age is: " << patient.getAge() << std::endl;
-    std::cout << "Name is: " << patient.getName() << std::endl;
-    std::cout << "Disease is: " << patient.getDisease() << std::endl << std::endl;
-}
 void menuClient() {
-   
+
+    int choice;
+    bool menu_status = 1;
+
+    while (menu_status = 1) {
+
         cout << "1) Запис на прийом до лікаря" << endl;
         cout << "2) Інформація про лікарню" << endl;
-        cout << "3) " << endl;
-        cout << "4) " << endl;
+        cout << "3) Вийти" << endl;
+
+        cin >> choice;
+
+        switch (choice) {
+        case 1:
+            registration();
+            break;
+        case 2:
+            cout << "Info place :)" << endl;
+            break;
+        case 3:
+            menu_status = 0;
+            break;
+        default:
+            cout << "Такого варіанта не існує" << endl;
+        }
+
+
+        
+    }
    
 }
 
 void menuDoctor() {
 
-        cout << "1) " << endl;
-        cout << "2) " << endl;
-        cout << "3) " << endl;
-        cout << "4) " << endl;
+    int choice;
+    bool menu_status = 1;
 
+    while (menu_status = 1) {
+        cout << "1) Список клієнтів" << endl;
+        cout << "2) Внести клієнта в список" << endl;
+        cout << "3) Записи на приймання" << endl;
+        cout << "4) Картка клієнта" << endl;
+        cout << "4) Вийти" << endl;
+
+        cin >> choice;
+
+        switch (choice) {
+        case 1:
+            cout << "1" << endl;
+            break;
+        case 2:
+            cout << "2" << endl;
+            break;
+        case 3:
+            cout << "3" << endl;
+            break;
+        case 4:
+            cout << "4" << endl;
+            break;
+        case 5:
+            cout << "5" << endl;
+            break;
+        default:
+            cout << "Такого варіанта не існує" << endl;
+        }
+
+    }
 }
 
 void menuAdmin() {
+    
+    int choice;
+    bool menu_admin = true;
+    
+    while (menu_admin == true) {
+       
+        cout << "1) Інформація про лікарів" << endl;
+        cout << "2) Інформація про клієнтів" << endl;
+        cout << "3) Змінити дані про лікаря" << endl;
+        cout << "4) Змінити двні про клієнта" << endl;      
+        cout << "5) Вийти" << endl;
 
-        cout << "1) " << endl;
-        cout << "2) " << endl;
-        cout << "3) " << endl;
-        cout << "4) " << endl;
-
-}
+        cin >> choice;
+        switch (choice){
+            case 1:
+                cout << "1" << endl;
+                break;
+            case 2: 
+                cout << "2" << endl;
+                break;
+            case 3: 
+                cout << "3" << endl;
+                break;
+            case 4: 
+                cout << "4" << endl;
+                break;
+            case 5:
+                cout << "5" << endl;
+                break;
+            default:
+                cout << "Такого варіанта не існує" << endl;
+        }
+    }
+};
 
 void clear() {
     COORD topLeft = { 0, 0 };
@@ -195,3 +238,31 @@ void clear() {
     SetConsoleCursorPosition(console, topLeft);
 }
 
+void registration() {
+
+    int choice;
+    bool menu_registration = true;
+
+    while (menu_registration == true) {
+
+        cout << "1) Бажаєте зареєструватися" << endl;
+        cout << "2) Вийти" << endl;
+       
+        cin >> choice;
+       
+        switch (choice) {
+        case 1:
+            cout << "Так" << endl;
+            
+            break;
+        case 2:
+            cout << "Вийти" << endl;
+            break;
+        default:
+            cout << "Такого варіанта не існує" << endl;
+
+        }
+    }
+
+
+}
